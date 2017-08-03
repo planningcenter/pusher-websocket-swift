@@ -603,7 +603,7 @@ open class PusherConnection: NSObject {
                         return
                     }
 
-                    handleAuthInfo(authString: authInfo.auth, channelData: authInfo.channelData, channel: channel)
+                    self.handleAuthInfo(authString: authInfo.auth, channelData: authInfo.channelData, channel: channel)
                 }
 
                 return true
