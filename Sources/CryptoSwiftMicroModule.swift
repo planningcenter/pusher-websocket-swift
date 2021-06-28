@@ -572,7 +572,7 @@ extension HMAC {
 //
 
 /** build bit pattern from array of bits */
-@_specialize(exported: true, where T == UInt8)
+@_specialize(where T == UInt8)
 func integerFrom<T: FixedWidthInteger>(_ bits: Array<Bit>) -> T {
     var bitPattern: T = 0
     for idx in bits.indices {
@@ -590,12 +590,12 @@ func integerFrom<T: FixedWidthInteger>(_ bits: Array<Bit>) -> T {
 /// - parameter length: length of output array. By default size of value type
 ///
 /// - returns: Array of bytes
-@_specialize(exported: true, where T == Int)
-@_specialize(exported: true, where T == UInt)
-@_specialize(exported: true, where T == UInt8)
-@_specialize(exported: true, where T == UInt16)
-@_specialize(exported: true, where T == UInt32)
-@_specialize(exported: true, where T == UInt64)
+@_specialize(where T == Int)
+@_specialize(where T == UInt)
+@_specialize(where T == UInt8)
+@_specialize(where T == UInt16)
+@_specialize(where T == UInt32)
+@_specialize(where T == UInt64)
 func arrayOfBytes<T: FixedWidthInteger>(value: T, length totalBytes: Int = MemoryLayout<T>.size) -> Array<UInt8> {
     let valuePointer = UnsafeMutablePointer<T>.allocate(capacity: 1)
     valuePointer.pointee = value
@@ -1541,12 +1541,12 @@ extension String {
 /** array of bytes */
 extension UInt16 {
 
-    @_specialize(exported: true, where T == ArraySlice<UInt8>)
+    @_specialize(where T == ArraySlice<UInt8>)
     init<T: Collection>(bytes: T) where T.Element == UInt8, T.Index == Int {
         self = UInt16(bytes: bytes, fromIndex: bytes.startIndex)
     }
 
-    @_specialize(exported: true, where T == ArraySlice<UInt8>)
+    @_specialize(where T == ArraySlice<UInt8>)
     init<T: Collection>(bytes: T, fromIndex index: T.Index) where T.Element == UInt8, T.Index == Int {
         if bytes.isEmpty {
             self = 0
@@ -1589,12 +1589,12 @@ extension UInt32: _UInt32Type {}
 /** array of bytes */
 extension UInt32 {
 
-    @_specialize(exported: true, where T == ArraySlice<UInt8>)
+    @_specialize(where T == ArraySlice<UInt8>)
     init<T: Collection>(bytes: T) where T.Element == UInt8, T.Index == Int {
         self = UInt32(bytes: bytes, fromIndex: bytes.startIndex)
     }
 
-    @_specialize(exported: true, where T == ArraySlice<UInt8>)
+    @_specialize(where T == ArraySlice<UInt8>)
     init<T: Collection>(bytes: T, fromIndex index: T.Index) where T.Element == UInt8, T.Index == Int {
         if bytes.isEmpty {
             self = 0
@@ -1630,12 +1630,12 @@ extension UInt32 {
 /** array of bytes */
 extension UInt64 {
 
-    @_specialize(exported: true, where T == ArraySlice<UInt8>)
+    @_specialize(where T == ArraySlice<UInt8>)
     init<T: Collection>(bytes: T) where T.Element == UInt8, T.Index == Int {
         self = UInt64(bytes: bytes, fromIndex: bytes.startIndex)
     }
 
-    @_specialize(exported: true, where T == ArraySlice<UInt8>)
+    @_specialize(where T == ArraySlice<UInt8>)
     init<T: Collection>(bytes: T, fromIndex index: T.Index) where T.Element == UInt8, T.Index == Int {
         if bytes.isEmpty {
             self = 0
