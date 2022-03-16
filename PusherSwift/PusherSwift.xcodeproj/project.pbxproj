@@ -222,8 +222,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33831C9D1A9CF61600B124F1 /* Build configuration list for PBXNativeTarget "PusherSwift" */;
 			buildPhases = (
-				33831C841A9CF61600B124F1 /* Sources */,
 				33831C861A9CF61600B124F1 /* Headers */,
+				33831C841A9CF61600B124F1 /* Sources */,
 				33831C871A9CF61600B124F1 /* Resources */,
 				3358FA6E1B4FD8C000AB0670 /* ShellScript */,
 				50355EA8A07B4B8038A4DDF1 /* Frameworks */,
@@ -280,6 +280,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 33831C491A9CEDF800B124F1;
